@@ -22,11 +22,13 @@ menu()
 func imprimir (){
     print("La lista actual es: \n",lista)
 }
+
+print("-->", terminator: "")
 obcion = readLine()!
 
 
 func pedirDatos(){
-    print("Elige otra obcion")
+    print("-->", terminator: "")
   obcion = readLine()!  
     
 }
@@ -52,36 +54,29 @@ func mostrar (){
 
 func eliminarIndice (){
      
- if (lista.count<=0){
-     print("\nLista esta vacia no se puede eliminar\n")
-     print("Elige otra obcion\n")
-     pedirDatos()
+     if (lista.count<=0){
+         print("\nLista esta vacia no se puede eliminar\n")
+         print("Elige otra obcion\n")
+         pedirDatos()
      
- }else{
-     print("\nIngrede el indice a eliminar\n")
-            print("La lista tiene", lista.count, "Elementos")
-            pedirDatos()
-     if (dato=="0"){
+         }else{
+             print("La lista tiene", lista.count, "Elementos")
+             print("\nIngrede el indice a eliminar\n")
+             pedirDatos()
+                 if (dato=="0"){
                 eliminarPrimero()
-                
-            }else{
-                num1 = Int(dato) ?? 0
-                lista.remove(at: num1)
-                print("se elimini", lista[num1], "\n")
-                print("====================")
-            }
-            pedirDatos()
- }
-    
-    
-    
-    
-            
-    
+                    }else{
+                        num1 = Int(dato) ?? 0
+                        lista.remove(at: num1)
+                        print("se elimin0", lista[num1], "\n")
+                        print("====================")
+                        pedirDatos()
+                    }
+             }              
 }
 
 func eliminarPrimero (){
-     print("Se elimino", lista.removeFirst())
+     print("Se borro :", lista.removeFirst())
             print("====================")
             pedirDatos()
 }

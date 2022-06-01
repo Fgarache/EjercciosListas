@@ -10,7 +10,9 @@ func menu (){
     print("3. remove itens the array")
     print("4. eliminar primero")
     print("5. eliminar ultimo")
+    print("6. eliminar todos")
     print("0 para salir")
+
     print("====================")
 }
 
@@ -19,8 +21,12 @@ func imprimir (){
     print("La lista actual es: \n",lista)
 }
 obcion = readLine()!
+
+
 func pedirDatos(){
+    print("Elige otra obcion")
   obcion = readLine()!  
+    
 }
 
 
@@ -33,14 +39,12 @@ switch (obcion){
             dato = readLine()!
             lista.append(dato)
             print("se agrego ", "==> ",dato, "\n")
-            menu()
+            print("====================")
             pedirDatos()
             break
     case "2": 
             print("Datos de la lista \n")
             print(lista, "\n")
-            print("Elige otra obcion ")
-            menu()
             pedirDatos()
             break
     case "3":
@@ -49,11 +53,28 @@ switch (obcion){
             num1 = Int(dato) ?? 0
             lista.remove(at: num1)
             print("se elimini", lista[num1], "\n")
-            menu()
+            print("====================")
             pedirDatos()
     
             break
-    case "0":print("Salir")
+
+    case "4":
+            print("Se elimino", lista.removeFirst())
+            print("====================")
+            pedirDatos()
+            break
+
+    case "5": 
+            print(lista.removeLast(), "<-- se elimino")
+            print("====================")
+            pedirDatos()
+            break
+    case "6":
+            print(lista.removeAll())
+            pedirDatos()
+            break
+    case "0":
+            print("Salir")
             ejecucion = false
             break
     
@@ -62,7 +83,6 @@ switch (obcion){
             pedirDatos()
     
 }
-    
 }
 
 

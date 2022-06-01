@@ -1,6 +1,7 @@
 var dato: String
 var lista = [String]()
 var obcion: String
+var ejecucion =  true
 
 func menu (){
     print("1. add itens the array")
@@ -8,6 +9,7 @@ func menu (){
     print("4. remove itens the array")
     print("5. eliminar primero")
     print("6. eliminar ultimo")
+    print("0 para salir")
     print("====================")
 }
 
@@ -20,28 +22,37 @@ func pedirDatos(){
   obcion = readLine()!  
 }
 
-
+while ejecucion == true {
 switch (obcion){
     case "1":
             print("Ingrese le dato a agregar")
             dato = readLine()!
             lista.append(dato)
-            print("se agrego ", dato)
+            print("se agrego ", "==> ",dato, "\n")
             menu()
             pedirDatos()
-    break
+            break
     case "2": 
-            print("Datos de la lista")
-            print(lista)
-            print("Elige otra obcion")
+            print("Datos de la lista \n")
+            print(lista, "\n")
+            print("Elige otra obcion ")
             menu()
             pedirDatos()
-    break
+            break
     case "3":
-    break
+            break
+    case "0":print("Salir")
+            ejecucion = false
+            break
+    
     default: print("Elija una obcion")
     
 }
+    
+}
+
+
+
 
 
 

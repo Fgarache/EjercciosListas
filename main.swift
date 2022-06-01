@@ -28,26 +28,37 @@ func pedirDatos(){
   obcion = readLine()!  
     
 }
-
-
-
-
-while ejecucion == true {
-switch (obcion){
-    case "1":
-            print("Ingrese le dato a agregar")
+func agregar (){
+    print("Ingrese le dato a agregar")
             dato = readLine()!
             lista.append(dato)
             print("se agrego ", "==> ",dato, "\n")
             print("====================")
             pedirDatos()
+}
+
+func mostrar (){
+     if (lista.count<=0){
+                print("\nLista vacia \n")
+                pedirDatos()
+            }else{
+                print("Datos de la lista \n")
+                print(lista, "\n")
+                pedirDatos()
+            }
+}
+
+
+
+while ejecucion == true {
+    switch (obcion){
+        case "1":
+            agregar()
             break
-    case "2": 
-            print("Datos de la lista \n")
-            print(lista, "\n")
-            pedirDatos()
+        case "2": 
+           mostrar()
             break
-    case "3":
+        case "3":
             print("\nIngrede el indice a eliminar")
             pedirDatos()
             num1 = Int(dato) ?? 0
@@ -58,40 +69,32 @@ switch (obcion){
     
             break
 
-    case "4":
+        case "4":
             print("Se elimino", lista.removeFirst())
             print("====================")
             pedirDatos()
             break
 
-    case "5": 
+        case "5": 
             print(lista.removeLast(), "<-- se elimino")
             print("====================")
             pedirDatos()
             break
-    case "6":
+        case "6":
             print(lista.removeAll())
             pedirDatos()
             break
-    case "0":
+        case "0":
             print("Salir")
             ejecucion = false
             break
     
-    default: print("Elija una obcion")
+        default: print("Elija una obcion")
             menu()
             pedirDatos()
     
-}
-}
-
-
-
-
-
-
-
-
+        }
+    }
 
 
 

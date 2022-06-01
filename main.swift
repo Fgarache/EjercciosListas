@@ -51,10 +51,17 @@ func mostrar (){
 }
 
 func eliminarIndice (){
+     
+ if (lista.count<=0){
+     print("\nLista esta vacia no se puede eliminar\n")
+     print("Elige otra obcion\n")
+     pedirDatos()
+     
+ }else{
      print("\nIngrede el indice a eliminar\n")
             print("La lista tiene", lista.count, "Elementos")
             pedirDatos()
-            if (dato=="0"){
+     if (dato=="0"){
                 eliminarPrimero()
                 
             }else{
@@ -64,6 +71,12 @@ func eliminarIndice (){
                 print("====================")
             }
             pedirDatos()
+ }
+    
+    
+    
+    
+            
     
 }
 
@@ -125,9 +138,6 @@ while ejecucion == true {
     
 }
 Casos()
-
-
-
 
 
 
